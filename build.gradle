@@ -1,0 +1,30 @@
+plugins {
+	id 'java'
+}
+
+group = 'com.github.devsyj'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+// 버전 묶지 말고 명시 할 것
+// 최대한 필요없는 dependency를 넣지 않고 최소화
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.1.18.RELEASE'
+
+	implementation 'org.apache.commons:commons-lang3:3.5'
+
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.1.18.RELEASE'
+
+	// lombok
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
